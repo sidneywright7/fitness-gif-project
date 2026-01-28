@@ -65,8 +65,32 @@ async function fetchGifs(searchTerm) {
         
         console.log('Data received:', data);
         
-        // Display the GIFs
-        displayGifs(data.data);
+    // Display the GIFs
+    data.data.forEach(gif => {
+    // Create container div for each GIF
+    const gifItem = document.createElement('div');
+    gifItem.classList.add('gif-item');
+    
+    // Create image element with GIF data
+    const img = document.createElement('img');
+    img.src = gif.images.fixed_height.url;
+    img.alt = gif.title || 'Exercise GIF';
+    img.loading = 'lazy';
+    
+    // Create title element
+    const title = document.createElement('p');
+    title.textContent = gif.title || 'Exercise';
+    title.style.padding = '0.5rem';
+    title.style.fontSize = '0.9rem';
+    title.style.textAlign = 'center';
+    
+    // Append image and title to container
+    gifItem.appendChild(img);
+    gifItem.appendChild(title);
+    
+    // Append container to main gif grid
+    gifContainer.appendChild(gifItem);
+});
         
     } catch (error) {
         console.error('Error fetching GIFs:', error);

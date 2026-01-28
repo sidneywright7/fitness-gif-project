@@ -6,7 +6,12 @@
 }
 
 body {
-    font-family: 'Exo 2', sans-serif;
+    .gravitas-one-regular {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    font-family: 'Gravitas One', serif;
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     min-height: 100vh;
     color: #333;

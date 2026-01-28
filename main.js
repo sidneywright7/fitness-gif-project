@@ -17,24 +17,29 @@ searchInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Main search function
+// Main search function - Initiates a search when user clicks search button or presses Enter
 function performSearch() {
     const searchTerm = searchInput.value.trim();
     
-    // Validate input
+    // Validate that user entered something
     if (searchTerm === '') {
         alert('Please enter an exercise name to search!');
         return;
     }
     
-    // Add "exercise" or "workout" to search for better fitness-related results
+    // Enhance search term with fitness keywords for better results
     const enhancedSearchTerm = `${searchTerm} exercise workout`;
     
-    // Make API request
+    // Make API request with enhanced search term
     fetchGifs(enhancedSearchTerm);
 }
-
-// Fetch GIFs from Giphy API
+/// ===================================
+// API REQUEST HANDLER
+// ===================================
+/**
+ * Fetches GIF data from Giphy API based on search term
+ * @param {string} searchTerm - The exercise name to search for
+ */
 async function fetchGifs(searchTerm) {
     try {
         // Show loading message
@@ -50,7 +55,7 @@ async function fetchGifs(searchTerm) {
         
         console.log('Response status:', response.status);
         
-        // Check if response is OK
+        // Check if request was successful
         if (!response.ok) {
             throw new Error(`API returned status ${response.status}`);
         }
@@ -69,7 +74,13 @@ async function fetchGifs(searchTerm) {
     }
 }
 
-// Display GIFs on the page
+// ===================================
+// DOM MANIPULATION
+// ===================================
+/**
+ * Takes array of GIF objects and displays them on the page
+ * @param {Array} gifs - Array of GIF objects from Giphy API
+ */
 function displayGifs(gifs) {
     // Clear previous results
     gifContainer.innerHTML = '';
@@ -80,7 +91,7 @@ function displayGifs(gifs) {
         return;
     }
     
-    // Iterate through the GIF data and create elements
+    // Loop through each GIF and create HTML elements
     gifs.forEach(gif => {
         // Create a container div for each GIF
         const gifItem = document.createElement('div');

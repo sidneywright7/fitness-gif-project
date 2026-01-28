@@ -5,11 +5,17 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Gravitas One', serif;
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     min-height: 100vh;
     color: #333;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Header Styles */
@@ -20,6 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .site-title h1 {
@@ -57,11 +64,13 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    width: 100%;
 }
 
 /* Search Section */
 .search-section {
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .search-container {
@@ -69,6 +78,7 @@ body {
     gap: 1rem;
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .search-input {
@@ -80,6 +90,7 @@ body {
     outline: none;
     font-family: 'Gravitas One', serif;
     transition: all 0.3s ease;
+    min-width: 0;
 }
 
 .search-input:focus {
@@ -99,6 +110,7 @@ body {
     cursor: pointer;
     font-family: 'Gravitas One', serif;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .search-button:hover {
@@ -114,6 +126,7 @@ body {
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
+    width: 100%;
 }
 
 .gif-item {
@@ -125,6 +138,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    max-width: 100%;
 }
 
 .gif-item:hover {
@@ -145,6 +159,7 @@ body {
     padding: 1.5rem;
     text-align: center;
     margin-top: 3rem;
+    width: 100%;
 }
 
 /* Loading Spinner */
@@ -167,10 +182,11 @@ body {
     text-align: center;
     color: white;
     padding: 2rem;
+    width: 100%;
 }
 
-/* Mobile Responsive - 320px and below */
-@media screen and (max-width: 320px) {
+/* Tablet and Mobile - 768px and below */
+@media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: center;
@@ -178,10 +194,18 @@ body {
         padding: 1rem;
     }
     
+    .site-title {
+        width: 100%;
+        text-align: center;
+    }
+    
     .site-title h1 {
         font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 0.5rem;
+        word-wrap: break-word;
+    }
+    
+    .navbar {
+        width: 100%;
     }
     
     .nav-list {
@@ -189,6 +213,7 @@ body {
         gap: 0.5rem;
         text-align: center;
         width: 100%;
+        padding: 0;
     }
     
     .nav-list li {
@@ -197,39 +222,75 @@ body {
     
     .nav-list a {
         display: block;
-        padding: 0.5rem;
+        padding: 0.75rem;
         background-color: rgba(102, 126, 234, 0.1);
         border-radius: 5px;
-    }
-    
-    .search-container {
-        flex-direction: column;
-    }
-    
-    .search-input,
-    .search-button {
         width: 100%;
-    }
-    
-    .gif-item {
-        flex: 0 1 100%;
     }
     
     .main-content {
         padding: 1rem;
     }
-}
-
-/* Tablet and small screens */
-@media screen and (min-width: 321px) and (max-width: 768px) {
+    
+    .search-section {
+        margin-bottom: 2rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .search-button {
+        width: 100%;
+        padding: 0.875rem 1.25rem;
+    }
+    
     .gif-item {
-        flex: 0 1 calc(50% - 1.5rem);
+        flex: 0 1 calc(50% - 0.75rem);
     }
 }
 
-/* Medium screens */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* Small Mobile - 480px and below */
+@media screen and (max-width: 480px) {
     .gif-item {
-        flex: 0 1 calc(33.333% - 1.5rem);
+        flex: 0 1 100%;
+    }
+    
+    .site-title h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Very Small Screens - 320px and below */
+@media screen and (max-width: 320px) {
+    .header {
+        padding: 0.75rem;
+    }
+    
+    .site-title h1 {
+        font-size: 1.1rem;
+    }
+    
+    .nav-list a {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+    
+    .search-input,
+    .search-button {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .main-content {
+        padding: 0.75rem;
     }
 }

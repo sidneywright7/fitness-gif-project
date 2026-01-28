@@ -104,6 +104,8 @@ body {
 .search-button:hover {
     background-color: #667eea;
     color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* Custom Flex-Based Grid Classes */

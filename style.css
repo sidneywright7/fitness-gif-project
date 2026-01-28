@@ -47,11 +47,14 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .nav-list a:hover {
     color: #667eea;
+    background-color: rgba(102, 126, 234, 0.1);
 }
 
 /* Main Content */

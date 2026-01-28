@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGIF Finder - Exercise Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="site-title">
+            <h1>Exercise Search</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#exercises">Exercises</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="search" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search for exercises (e.g., squat, pushup, plank)..."
+                    aria-label="Search exercises">
+                <button type="submit" id="searchButton" class="search-button">Search</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="gifContainer" class="gif-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Fitness GIF Finder. Powered by Giphy API.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

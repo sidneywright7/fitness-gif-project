@@ -46,7 +46,7 @@ async function fetchGifs(searchTerm) {
         gifContainer.innerHTML = '<p style="color: white; text-align: center; width: 100%; font-size: 1.2rem;">Loading exercises...</p>';
         
         // Build the API URL with parameters
-        const url = `${GIPHY_API_URL}?api_key=${API_KEY}&q=${encodeURIComponent(searchTerm)}&limit=12&rating=g`;
+        const url = `${GIPHY_API_URL}?api_key=${API_KEY}&q=${encodeURIComponent(searchTerm)}&limit=20&rating=g`;
         
         console.log('Fetching URL:', url);
         
